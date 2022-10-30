@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Filename: SalaryCounter.java
  * @author Andrian Fadhilla (NPM: 109220640085)
@@ -5,13 +7,20 @@
 public class SalaryCounter {
 
     public static void main(String[] args) throws Exception {
-        int masa_kerja = 24, gaji_pokok = 4800000, gaji, bonus = 0;
+        int masa_kerja, gaji_pokok, gaji, bonus = 0;
 
         System.out.println(); // Give some space
         System.out.println("Program untuk menghitung gaji seorang karyawan");
         System.out.println("==============================================");
-        System.out.println("Gaji pokok : " + gaji_pokok);
-        System.out.println("Masa kerja : " + masa_kerja);
+
+        try (Scanner dScanner = new Scanner(System.in)) {
+            System.out.print("Gaji pokok : ");
+            gaji_pokok = dScanner.nextInt();
+
+            System.out.print("Masa kerja : ");
+            masa_kerja = dScanner.nextInt();
+        }
+
         System.out.println("==============================================");
 
         if (masa_kerja >= 10) {
